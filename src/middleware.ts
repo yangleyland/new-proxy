@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const TARGET_URL = "https://docs-dev.mintlify.builders";
+const TARGET_URL = process.env.TARGET_URL;
 
 export function middleware(request: NextRequest) {
   const url = new URL(request.url);
