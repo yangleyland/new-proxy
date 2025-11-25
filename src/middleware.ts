@@ -6,6 +6,7 @@ export function middleware(request: NextRequest) {
   const url = new URL(request.url);
   const targetUrl = new URL(url.pathname + url.search, TARGET_URL);
   const host = request.headers.get("host") || "";
+  console.log("HOST:", host);
 
   const headers = new Headers(request.headers);
   headers.set("x-forwarded-host", host);
